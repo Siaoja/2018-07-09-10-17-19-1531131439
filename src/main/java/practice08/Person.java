@@ -1,6 +1,6 @@
 package practice08;
 
-public class Person {
+public class Person extends Object{
     private int id;
     private String name;
     private int age;
@@ -25,6 +25,15 @@ public class Person {
 
     public String introduce(){
         return "My name is " + name + ". I am " + age + " years old.";
+    }
+
+    @Override
+    public boolean equals(Object object){
+        if(object == null)
+            return false;
+        else if(this == object || ((Person)object).getId() == this.getId())
+            return true;
+        return false;
     }
 
 }
